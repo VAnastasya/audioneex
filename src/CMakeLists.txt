@@ -78,7 +78,7 @@ endif()
 # --- Check for required libraries ---
 
 find_library(FFTSS_LIB
-             NAMES ffts
+             NAMES fftss ffts ffts_test
              PATHS ${MY_LIBRARY_${ARCH}_${CMAKE_BUILD_TYPE}_DIRS})
 
 # --- Build the modules ---
