@@ -44,6 +44,7 @@ list(APPEND MY_LIBRARY_x64_RELEASE_DIRS
 
     "C:/dev/cpp/lib/vc191/x64/release"
     "C:/dev/cpp/lib/vc191/x64/release/static"
+    "/usr/local/lib"
     "/usr/local/lib/7"
 )
 
@@ -54,6 +55,7 @@ list(APPEND MY_LIBRARY_x64_DEBUG_DIRS
 
     "C:/dev/cpp/lib/vc191/x64/debug"
     "C:/dev/cpp/lib/vc191/x64/debug/static"
+    "/usr/local/lib"
     "/usr/local/lib/7"
 )
 
