@@ -13,7 +13,8 @@ include_directories(${AX_SRC_ROOT}/src
                     ${AX_SRC_ROOT}/src/quant
                     ${AX_SRC_ROOT}/src/audiocodes
                     ${AX_SRC_ROOT}/audio
-                    ${AX_SRC_ROOT}/tools)
+                    ${AX_SRC_ROOT}/tools
+		    ${AX_SRC_ROOT}/fftss)
 
 set(AX_LIB_SRC
     ident/Fingerprint.cpp
