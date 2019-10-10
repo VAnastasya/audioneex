@@ -32,7 +32,6 @@ project (audioneex VERSION 1.3.0 LANGUAGES CXX)
 
 list(APPEND MY_INCLUDE_DIRS
     
-    "C:/dev/cpp/include"
     "/usr/local/include/tcabinet"
 
 )
@@ -42,8 +41,6 @@ list(APPEND MY_LIBRARY_x32_RELEASE_DIRS
 
 list(APPEND MY_LIBRARY_x64_RELEASE_DIRS
 
-    "C:/dev/cpp/lib/vc191/x64/release"
-    "C:/dev/cpp/lib/vc191/x64/release/static"
     "/usr/local/lib"
     "/usr/local/lib/7"
 )
@@ -53,8 +50,6 @@ list(APPEND MY_LIBRARY_x32_DEBUG_DIRS
 
 list(APPEND MY_LIBRARY_x64_DEBUG_DIRS
 
-    "C:/dev/cpp/lib/vc191/x64/debug"
-    "C:/dev/cpp/lib/vc191/x64/debug/static"
     "/usr/local/lib"
     "/usr/local/lib/7"
 )
@@ -135,7 +130,7 @@ if(DATASTORE_T STREQUAL "TCDataStore")
    if(CMAKE_CXX_COMPILER_ID STREQUAL "MSVC")
       set(DATASTORE_LIB_NAME libejdb)
    else()
-      set(DATASTORE_LIB_NAME tokyocabinet)
+      set(DATASTORE_LIB_NAME libtokyocabinet)
    endif()
    add_definitions(-DDATASTORE_T_ID=1)
    add_definitions(-DDATASTORE_T=${DATASTORE_T})
