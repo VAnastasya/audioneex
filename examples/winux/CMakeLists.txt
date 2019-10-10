@@ -47,7 +47,7 @@ set(EXAMPLE4_SRCS example4.cpp
 # --- Check for required libraries ---
 
 find_library(DATASTORE_LIB
-             NAMES tokyocabinet
+             NAMES libtokyocabinet
              PATHS ${MY_LIBRARY_${ARCH}_${CMAKE_BUILD_TYPE}_DIRS})
 			 
 if(WITH_ID3)
