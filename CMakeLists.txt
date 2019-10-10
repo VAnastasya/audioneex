@@ -32,7 +32,7 @@ project (audioneex VERSION 1.3.0 LANGUAGES CXX)
 
 list(APPEND MY_INCLUDE_DIRS
     
-    "/usr/local/include/tcabinet"
+    "/usr/local/include"
 
 )
 
