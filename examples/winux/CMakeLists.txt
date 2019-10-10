@@ -50,7 +50,7 @@ set(EXAMPLE4_SRCS example4.cpp
 
 find_library(DATASTORE_LIB
              NAMES tokyocabinet libtokyocabinet
-             PATHS "usr/local/lib")
+             PATHS "/usr/local/lib")
 			 
 if(WITH_ID3)
 find_library(ID3TAG_LIB
