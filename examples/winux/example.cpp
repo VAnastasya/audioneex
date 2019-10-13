@@ -38,7 +38,7 @@ int main(int argc, char** argv) {
         itask.SetIndexer( indexer );
         itask.Run();*/
 
-        std::cout << "Fingerprints Count: " <<GetFingerprintsCount() << std::endl;
+        std::cout << "Fingerprints Count: " <<dstore->GetFingerprintsCount() << std::endl;
         
         dstore->Close();
     }
