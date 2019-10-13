@@ -25,7 +25,7 @@ int main(int argc, char** argv) {
         std::shared_ptr<KVDataStore>
         dstore ( new DATASTORE_T (opts.db_url) );
 
-        dstore->Open( opts.db_op, true, true );
+       /* dstore->Open( opts.db_op, true, true );
 
         std::shared_ptr<Indexer> 
         indexer ( Indexer::Create() );
@@ -36,9 +36,9 @@ int main(int argc, char** argv) {
         itask.SetFID( opts.FID_base );
         itask.SetDataStore( dstore );
         itask.SetIndexer( indexer );
-        itask.Run();
+        itask.Run();*/
 
-        std::cout << "Done" << std::endl;
+        std::cout << opts.db_url << std::endl;
     }
     catch(const bad_cmd_line_exception &ex)
     {
