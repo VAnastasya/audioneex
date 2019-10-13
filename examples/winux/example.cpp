@@ -38,7 +38,9 @@ int main(int argc, char** argv) {
         itask.SetIndexer( indexer );
         itask.Run();*/
 
-        std::cout << opts.db_url << std::endl;
+        std::cout << "Fingerprints Count: " <<GetFingerprintsCount() << std::endl;
+        
+        dstore->Close();
     }
     catch(const bad_cmd_line_exception &ex)
     {
