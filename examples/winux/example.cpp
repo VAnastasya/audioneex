@@ -27,16 +27,19 @@ int main(int argc, char** argv) {
 
         dstore->Open( opts.db_op, true, true );
 
-        std::shared_ptr<Indexer> 
-        indexer ( Indexer::Create() );
+        std::shared_ptr<Indexer> indexer ( Indexer::Create() );
         indexer->SetDataStore( dstore.get() );
         indexer->SetAudioProvider( &itask );
         indexer->SetMatchType( opts.mtype );
+        
+        indexer->Start();
 
         /*itask.SetFID( opts.FID_base );
         itask.SetDataStore( dstore );
         itask.SetIndexer( indexer );
         itask.Run();*/
+        
+        indexer->End();
 
         std::cout << "Fingerprints Count: " <<dstore->GetFingerprintsCount() << std::endl;
         
