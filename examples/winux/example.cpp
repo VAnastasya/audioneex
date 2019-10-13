@@ -30,18 +30,19 @@ int main(int argc, char** argv) {
         std::shared_ptr<Indexer> indexer ( Indexer::Create() );
         indexer->SetDataStore( dstore.get() );
         indexer->SetAudioProvider( &itask );
-        indexer->SetMatchType( opts.mtype );
+        indexer->SetMatchType( opts.mtype );        
+        indexer->SetCacheLimit( 256 );
         
-        indexer->Start();
+        indexer->Start();       
 
-        /*itask.SetFID( opts.FID_base );
-        itask.SetDataStore( dstore );
+        itask.SetFID( opts.FID_base );
+        /*itask.SetDataStore( dstore );
         itask.SetIndexer( indexer );
         itask.Run();*/
         
         indexer->End();
 
-        std::cout << "Fingerprints Count: " <<dstore->GetFingerprintsCount() << std::endl;
+        std::cout << opts.apath << std::endl;
         
         dstore->Close();
     }
