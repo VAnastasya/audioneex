@@ -36,13 +36,11 @@ int main(int argc, char** argv) {
         indexer->Start();       
 
         itask.SetFID( opts.FID_base );
-        /*itask.SetDataStore( dstore );
+        //itask.SetDataStore( dstore );
         itask.SetIndexer( indexer );
-        itask.Run();*/
+        //itask.Run();
         
         indexer->End();
-
-        std::cout << opts.apath << std::endl;
         
         dstore->Close();
     }
