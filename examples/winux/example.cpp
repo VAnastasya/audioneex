@@ -25,9 +25,9 @@ int main(int argc, char** argv) {
         std::shared_ptr<KVDataStore>
         dstore ( new DATASTORE_T (opts.db_url) );
 
-       /* dstore->Open( opts.db_op, true, true );
+        dstore->Open( opts.db_op, true, true );
 
-        std::shared_ptr<Indexer> 
+        /*std::shared_ptr<Indexer> 
         indexer ( Indexer::Create() );
         indexer->SetDataStore( dstore.get() );
         indexer->SetAudioProvider( &itask );
@@ -52,6 +52,6 @@ int main(int argc, char** argv) {
         return -1;
     }    
         
-    //std::cout << "Hello Easy C++ project!" << std::endl;
+    std::cout << "Hello from my project!" << std::endl;
     return 0;    
 }
