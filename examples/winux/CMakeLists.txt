@@ -42,7 +42,7 @@ set(EXAMPLE3_SRCS example3.cpp
                   ${AX_SRC_ROOT}/DAO/${DATASTORE_T}.cpp 
                   ${AX_SRC_ROOT}/audio/AudioSource.cpp)
 
-set(EXAMPLE4_SRCS example4.cpp 
+set(EXAMPLE4_SRCS example.cpp 
                   ${AX_SRC_ROOT}/DAO/${DATASTORE_T}.cpp 
                   ${AX_SRC_ROOT}/audio/AudioSource.cpp)
 
@@ -78,7 +78,7 @@ target_link_libraries(example3 audioneex
                       ${Boost_LIBRARIES} ${THREAD_LIB}
                       ${DATASTORE_LIB} ${ID3TAG_LIB})
 
-add_executable(example4 ${EXAMPLE4_SRCS})
+add_executable(example ${EXAMPLE4_SRCS})
 target_compile_options(example4 PRIVATE "${APP_CXX_FLAGS}")
 target_link_libraries(example4 audioneex
                       ${Boost_LIBRARIES} ${THREAD_LIB}
