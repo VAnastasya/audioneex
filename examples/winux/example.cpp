@@ -38,7 +38,7 @@ int main(int argc, char** argv) {
         itask.SetFID( opts.FID_base );
         //itask.SetDataStore( dstore );
         itask.SetIndexer( indexer );
-        //itask.Run();
+        itask.Run();
         
         indexer->End();
         
