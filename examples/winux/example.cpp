@@ -36,10 +36,8 @@ int main(int argc, char** argv) {
         itask.SetFID( opts.FID_base );
         //itask.SetDataStore( dstore );
         itask.SetIndexer( indexer );
-        itask.Run();
-        
-        indexer->End();
-        
+        //itask.Run();
+               
         dstore->Close();
     }
     catch(const bad_cmd_line_exception &ex)
