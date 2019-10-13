@@ -79,8 +79,8 @@ target_link_libraries(example3 audioneex
                       ${DATASTORE_LIB} ${ID3TAG_LIB})
 
 add_executable(example ${EXAMPLE4_SRCS})
-target_compile_options(example4 PRIVATE "${APP_CXX_FLAGS}")
-target_link_libraries(example4 audioneex
+target_compile_options(example PRIVATE "${APP_CXX_FLAGS}")
+target_link_libraries(example audioneex
                       ${Boost_LIBRARIES} ${THREAD_LIB}
                       ${DATASTORE_LIB} ${ID3TAG_LIB})
 
