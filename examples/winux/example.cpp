@@ -31,9 +31,7 @@ int main(int argc, char** argv) {
         indexer->SetDataStore( dstore.get() );
         indexer->SetAudioProvider( &itask );
         indexer->SetMatchType( opts.mtype );        
-        indexer->SetCacheLimit( 256 );
-        
-        indexer->Start();       
+        indexer->SetCacheLimit( 256 );            
 
         itask.SetFID( opts.FID_base );
         //itask.SetDataStore( dstore );
