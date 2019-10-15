@@ -62,12 +62,6 @@ int main(int argc, char** argv)
         std::shared_ptr<KVDataStore> 
         dstore ( new DATASTORE_T (opts.db_url) );
 
-        // For client/server databases only (e.g. Couchbase)
-        dstore->SetServerName( "localhost" );
-        dstore->SetServerPort( 8091 );
-        dstore->SetUsername( "admin" );
-        dstore->SetPassword( "password" );
-
         dstore->Open( KVDataStore::GET, true, true );
 
         // Create and set up the recognizer
@@ -79,6 +73,13 @@ int main(int argc, char** argv)
         recognizer->SetIdentificationType( opts.id_type );
         recognizer->SetIdentificationMode( opts.id_mode );
         recognizer->SetBinaryIdThreshold( opts.b_thresh );
+      
+        std::cout<<"mtype="<<opts.mtype<<std::endl;
+        std::cout<<"mms="<<opts.mms<<std::endl;
+        std::cout<<"id_type="<<opts.id_type<<std::endl;
+        std::cout<<"id_mode="<<opts.id_mode<<std::endl;
+        std::cout<<"b_thresh="<<opts.b_thresh<<std::endl;
+        std::cout<<"offset="<<opts.offset<<std::endl;      
 
         idparser.SetDatastore( dstore );
         idparser.SetRecognizer( recognizer );
