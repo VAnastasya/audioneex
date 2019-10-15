@@ -74,12 +74,12 @@ int main(int argc, char** argv)
         recognizer->SetIdentificationMode( opts.id_mode );
         recognizer->SetBinaryIdThreshold( opts.b_thresh );
       
-        std::cout<<"mtype="<<opts.mtype<<std::endl;
+        /*std::cout<<"mtype="<<opts.mtype<<std::endl;
         std::cout<<"mms="<<opts.mms<<std::endl;
         std::cout<<"id_type="<<opts.id_type<<std::endl;
         std::cout<<"id_mode="<<opts.id_mode<<std::endl;
         std::cout<<"b_thresh="<<opts.b_thresh<<std::endl;
-        std::cout<<"offset="<<opts.offset<<std::endl;      
+        std::cout<<"offset="<<opts.offset<<std::endl;  */    
 
         idparser.SetDatastore( dstore );
         idparser.SetRecognizer( recognizer );
