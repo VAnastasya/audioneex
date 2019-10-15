@@ -48,23 +48,27 @@ int main(int argc, char** argv)
     try
     {
         cmdLine.Parse(argv, argc, opts);
-        
-        AudioIndexingTask itask (opts.apath+"_index");
-        IdentificationTask rtask (opts.apath+"_recog");   
 
-        // Get a connection instance to the datastore
-        std::shared_ptr<KVDataStore> dstore ( new DATASTORE_T (opts.db_url) );       
-      
-        // Create and set up the indexer      
-        std::shared_ptr<Indexer> indexer ( Indexer::Create() );
+        AudioIndexingTask itask (opts.apath);
+
+        std::shared_ptr<KVDataStore>
+        dstore ( new DATASTORE_T (opts.db_url) );
+
+        dstore->Open( opts.db_op, true, true );
+
+        std::shared_ptr<Indexer> 
+        indexer ( Indexer::Create() );
         indexer->SetDataStore( dstore.get() );
         indexer->SetAudioProvider( &itask );
-        indexer->SetMatchType( opts.mtype );    
-      
+        indexer->SetMatchType( opts.mtype );
+
         itask.SetFID( opts.FID_base );
         itask.SetDataStore( dstore );
         itask.SetIndexer( indexer );
-        itask.Run();      
+        itask.Run();  
+      
+        //AudioIndexingTask itask (opts.apath+"_index");
+        //IdentificationTask rtask (opts.apath+"_recog");       
       
         // Create the identification results parser
         /*FileIdentificationResultsParser idparser;
