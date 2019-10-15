@@ -50,7 +50,7 @@ int main(int argc, char** argv)
         cmdLine.Parse(argv, argc, opts);
         
         AudioIndexingTask itask (opts.apath+"_index"); 
-        IdentificationTask rtask (opts.apath+"__recog");         
+        IdentificationTask rtask (opts.apath+"_recog");         
 
         std::shared_ptr<KVDataStore>
         dstore ( new DATASTORE_T (opts.db_url) );
