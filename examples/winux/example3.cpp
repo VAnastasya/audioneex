@@ -67,7 +67,7 @@ int main(int argc, char** argv)
         itask.Run();      
       
         // Create the identification results parser
-        FileIdentificationResultsParser idparser;
+        /*FileIdentificationResultsParser idparser;
         // Create and set up the recognizer
         std::shared_ptr<Recognizer> recognizer ( Recognizer::Create() );
         recognizer->SetDataStore( dstore.get() );
@@ -84,7 +84,7 @@ int main(int argc, char** argv)
         rtask.SetRecognizer( recognizer );
         rtask.Connect( &idparser );
         rtask.GetAudioSource()->SetPosition( opts.offset );
-        rtask.Run();
+        rtask.Run();*/
 
         std::cout << "Done" << std::endl;
     }
