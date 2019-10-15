@@ -23,6 +23,7 @@
 #include <vector>
 #include <algorithm>
 #include <memory>
+#include <string>
 
 #include "ex_common.h"
 #include "example1.h"
