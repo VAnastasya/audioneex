@@ -1,3 +1,4 @@
+/*
 Copyright (c) 2014, Alberto Gramaglia
 
   This Source Code Form is subject to the terms of the Mozilla Public
