@@ -45,13 +45,12 @@ int main(int argc, char** argv)
 {
     CmdLineParser cmdLine;
     CmdLineOptions_t opts;
-    std::string a_path;
   
     try
     {
         cmdLine.Parse(argv, argc, opts);
         
-        a_apath=opts.apath+"_index";
+        std::string a_apath=opts.apath+"_index";
         AudioIndexingTask itask (a_apath);
         a_path=opts.apath+"__recog";      
         IdentificationTask rtask (a_apath);         
