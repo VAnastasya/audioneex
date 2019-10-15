@@ -49,20 +49,14 @@ int main(int argc, char** argv)
     {
         cmdLine.Parse(argv, argc, opts);
         
-        //AudioIndexingTask itask (opts.apath+"_index");
-        //IdentificationTask rtask (opts.apath+"_recog");
-      
-        std::cout << opts.apath+"_index" << std::endl;
-        std::cout << opts.apath+"_recog" << std::endl;      
+        AudioIndexingTask itask (opts.apath+"_index");
+        IdentificationTask rtask (opts.apath+"_recog");   
 
         // Get a connection instance to the datastore
-        std::shared_ptr<KVDataStore> dstore ( new DATASTORE_T (opts.db_url) );
-        std::cout << "*" << std::endl;        
-        dstore->Open( KVDataStore::GET, true, true );
-        std::cout << "**" << std::endl;        
+        std::shared_ptr<KVDataStore> dstore ( new DATASTORE_T (opts.db_url) );       
       
         // Create and set up the indexer      
-        /*std::shared_ptr<Indexer> indexer ( Indexer::Create() );
+        std::shared_ptr<Indexer> indexer ( Indexer::Create() );
         indexer->SetDataStore( dstore.get() );
         indexer->SetAudioProvider( &itask );
         indexer->SetMatchType( opts.mtype );    
@@ -90,9 +84,8 @@ int main(int argc, char** argv)
         rtask.SetRecognizer( recognizer );
         rtask.Connect( &idparser );
         rtask.GetAudioSource()->SetPosition( opts.offset );
-        rtask.Run();*/
+        rtask.Run();
 
-        dstore->Close();
         std::cout << "Done" << std::endl;
     }
     catch(const bad_cmd_line_exception &ex)
