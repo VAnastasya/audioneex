@@ -177,7 +177,7 @@ class FileIdentificationResultsParser : public IdentificationResultsListener
            // The audio was identified.
            if(BestMatch[0].IdClass == Audioneex::IDENTIFIED)
            {
-               std::cout << "IDENTIFIED  FID: " << BestMatch[0].FID << filename<< std::endl;
+               std::cout << "IDENTIFIED  FID: " << BestMatch[0].FID << std::endl;
                std::cout << "Score: " << BestMatch[0].Score << ", ";
                std::cout << "Conf.: " << BestMatch[0].Confidence << ", ";
                std::cout << (meta.empty() ? "No metadata" : meta) << std::endl;
