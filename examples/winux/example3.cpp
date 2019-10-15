@@ -52,8 +52,8 @@ int main(int argc, char** argv)
         
         std::string a_apath=opts.apath+"_index";
         AudioIndexingTask itask (a_apath);
-        a_path=opts.apath+"__recog";      
-        IdentificationTask rtask (a_apath);         
+        //a_path=opts.apath+"__recog";      
+        IdentificationTask rtask (opts.apath+"__recog");         
 
         std::shared_ptr<KVDataStore>
         dstore ( new DATASTORE_T (opts.db_url) );
