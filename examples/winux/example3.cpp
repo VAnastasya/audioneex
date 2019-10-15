@@ -45,7 +45,7 @@ int main(int argc, char** argv)
 {
     CmdLineParser cmdLine;
     CmdLineOptions_t opts;
-    string a_path;
+    std::string a_path;
   
     try
     {
