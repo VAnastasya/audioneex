@@ -74,6 +74,7 @@ int main(int argc, char** argv)
         std::shared_ptr<Recognizer> recognizer ( Recognizer::Create() );
         recognizer->SetDataStore( dstore.get() );
         recognizer->SetMatchType( opts.mtype );
+        opts.mms=0.5;
         recognizer->SetMMS( opts.mms );
         recognizer->SetIdentificationType( opts.id_type );
         recognizer->SetIdentificationMode( opts.id_mode );
