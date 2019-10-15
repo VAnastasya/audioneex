@@ -44,13 +44,16 @@ int main(int argc, char** argv)
 {
     CmdLineParser cmdLine;
     CmdLineOptions_t opts;
+    string a_path;
   
     try
     {
         cmdLine.Parse(argv, argc, opts);
         
-        opts.apath=opts.apath+"_index";
-        AudioIndexingTask itask (opts.apath);
+        a_apath=opts.apath+"_index";
+        AudioIndexingTask itask (a_apath);
+        a_path=opts.apath+"__recog";      
+        IdentificationTask rtask (a_apath);         
 
         std::shared_ptr<KVDataStore>
         dstore ( new DATASTORE_T (opts.db_url) );
@@ -66,10 +69,7 @@ int main(int argc, char** argv)
         itask.SetFID( opts.FID_base );
         itask.SetDataStore( dstore );
         itask.SetIndexer( indexer );
-        itask.Run();  
-      
-        //AudioIndexingTask itask (opts.apath+"_index");
-        //IdentificationTask rtask (opts.apath+"_recog");       
+        itask.Run();    
       
         // Create the identification results parser
         /*FileIdentificationResultsParser idparser;
