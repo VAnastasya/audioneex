@@ -1,5 +1,4 @@
-/*
-  Copyright (c) 2014, Alberto Gramaglia
+Copyright (c) 2014, Alberto Gramaglia
 
   This Source Code Form is subject to the terms of the Mozilla Public
   License, v. 2.0. If a copy of the MPL was not distributed with this
@@ -21,6 +20,8 @@
 
 namespace bfs = boost::filesystem;
 
+std::string filename;
+
 
 class IdentificationTask : public IdTask
 {
@@ -36,7 +37,7 @@ class IdentificationTask : public IdTask
 
         if(bfs::is_regular_file(audioclip))
         {
-           std::string filename = bfs::path(audioclip).filename().string();
+           filename = bfs::path(audioclip).filename().string();
 
            std::cout << "=========================================================" << std::endl;
            std::cout << "Identifying " << filename << " ..." << std::endl;
@@ -175,7 +176,7 @@ class FileIdentificationResultsParser : public IdentificationResultsListener
            // The audio was identified.
            if(BestMatch[0].IdClass == Audioneex::IDENTIFIED)
            {
-	       std::cout << "IDENTIFIED  FID " << BestMatch[0].FID <<": "<<bfs::path(audioclip).filename().string()<< std::endl;
+               std::cout << "IDENTIFIED  FID: " << BestMatch[0].FID << filename<< std::endl;
                std::cout << "Score: " << BestMatch[0].Score << ", ";
                std::cout << "Conf.: " << BestMatch[0].Confidence << ", ";
                std::cout << (meta.empty() ? "No metadata" : meta) << std::endl;
