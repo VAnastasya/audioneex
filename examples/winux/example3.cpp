@@ -23,7 +23,6 @@
 #include <vector>
 #include <algorithm>
 #include <memory>
-#include <string>
 
 #include "ex_common.h"
 #include "example1.h"
@@ -50,9 +49,7 @@ int main(int argc, char** argv)
     {
         cmdLine.Parse(argv, argc, opts);
         
-        std::string a_apath=opts.apath+"_index";
-        AudioIndexingTask itask (a_apath);
-        //a_path=opts.apath+"__recog";      
+        AudioIndexingTask itask (opts.apath+"_index"); 
         IdentificationTask rtask (opts.apath+"__recog");         
 
         std::shared_ptr<KVDataStore>
@@ -72,7 +69,7 @@ int main(int argc, char** argv)
         itask.Run();    
       
         // Create the identification results parser
-        /*FileIdentificationResultsParser idparser;
+        FileIdentificationResultsParser idparser;
         // Create and set up the recognizer
         std::shared_ptr<Recognizer> recognizer ( Recognizer::Create() );
         recognizer->SetDataStore( dstore.get() );
@@ -89,7 +86,7 @@ int main(int argc, char** argv)
         rtask.SetRecognizer( recognizer );
         rtask.Connect( &idparser );
         rtask.GetAudioSource()->SetPosition( opts.offset );
-        rtask.Run();*/
+        rtask.Run();
 
         std::cout << "Done" << std::endl;
     }
