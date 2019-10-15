@@ -48,7 +48,8 @@ int main(int argc, char** argv)
     try
     {
         cmdLine.Parse(argv, argc, opts);
-
+        
+        opts.apath=opts.apath+"_index";
         AudioIndexingTask itask (opts.apath);
 
         std::shared_ptr<KVDataStore>
