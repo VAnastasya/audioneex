@@ -9,7 +9,7 @@
 
 ///
 /// example3 [-u <db_url>] [-m <match_type>] [-i <id_type>] [-d <id_mode>] 
-///          [-b <b_thresh>] [-s <offset>] <audio_path_ind> <audio_path_rec>
+///          [-b <b_thresh>] [-s <offset>] <audio_path> 
 ///
 /// where <db_url> specifies the location of the database, <match_type> is one 
 /// of [MSCALE | XSCALE], <id_type> one of [BINARY | FUZZY], <id_mode> one of 
@@ -36,7 +36,7 @@ void PrintUsage()
 {
     std::cout << "\nUSAGE: example3 [-u <db_url>] [-m <match_type>] "
                  "[-i <id_type>] [-d <id_mode>] "
-                 "[-b <b_thresh>] [-s <offset>] <audio_path_ind> <audio_path_rec>\n\n";
+                 "[-b <b_thresh>] [-s <offset>] <audio_path>\n\n";
 }
 
 
@@ -44,13 +44,13 @@ int main(int argc, char** argv)
 {
     CmdLineParser cmdLine;
     CmdLineOptions_t opts;
-
+  
     try
     {
         cmdLine.Parse(argv, argc, opts);
         
-        AudioIndexingTask itask (opts.apath);
-        IdentificationTask rtask (opts.apath);
+        AudioIndexingTask itask (opts.apath+"_index");
+        IdentificationTask rtask (opts.apath+"_recog");
 
         // Get a connection instance to the datastore
         std::shared_ptr<KVDataStore> 
